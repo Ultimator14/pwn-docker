@@ -13,7 +13,7 @@ This project aims to split the debugging into two parts. One part runs on the ho
 
 ## Container Setup
 
-A pre-built container is available on [Docker Hub](https://hub.docker.com/repository/docker/ultimator14/pwn-docker).  
+A pre-built container is available on [Docker Hub](https://hub.docker.com/r/ultimator14/pwn-docker).
 
 ```bash
 docker pull ultimator14/pwn-docker
