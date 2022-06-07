@@ -25,7 +25,7 @@ docker pull ultimator14/pwn-docker
 
 - Go to the directory where your binaries are
 - Copy `exploit.py` from the host folder to this directory
-- Run the container without arguments to get the container ip
+- Run the container (possible without arguments) to get the container ip
 - Edit the config and exploit section in the `exploit.py` script
 
 ```bash
@@ -37,7 +37,8 @@ mybinfile mybinfile2 mybinfile3 ...
 $ cp /path/to/pwn-docker/host/exploit.py .
 
 $ docker run --tty --interactive --rm ultimator14/pwn-docker
--> write down the ip of docker0
+-> write down the ip
+-> Enter 0 to exit prompt
 
 $ vi exploit.py
 -> edit the file
@@ -45,9 +46,10 @@ $ vi exploit.py
 
 ### Start the container
 
-- Run the container with the binary as argument to start gdbserver and pwntools listener
+- Run the container with the binary as argument to be able to start gdbserver and pwntools listener
 ```bash
 $ docker run --tty --interactive --rm -v "$PWD":/workdir -w /workdir ultimator14/pwn-docker ./mybinfile
+-> Enter 2 or 3
 ```
 
 ### Debug on host
@@ -71,7 +73,7 @@ The container runs gdbserver and the pwntools listener in an endless loop. There
 
 ## WARNING
 
-- Do not start the container without `--tty --interactive`. If there is an error this will create an endless loop which can only be stopped via `docker container stop <containename>`
+- Do not start the container without `--tty --interactive`. The container can only be stopped via tty or `docker container stop <containename>`
 - The current directory will be mounted in the container. A malicious binary could delete/encrypt/modify all files in the current directory and it's subdirectories. Therefore do always debug a binary from a directory which has no important files inside it's  hierarchy. 
 
 ## Notes

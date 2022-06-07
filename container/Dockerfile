@@ -11,6 +11,6 @@ RUN pacman -S --noconfirm binutils gcc gdb lib32-glibc
 RUN pip install --user pwntools
 
 COPY pwn-gdb.py /usr/local/bin/pwn-gdb
-COPY repeat.sh /usr/local/bin/repeat.sh
+COPY menu.sh /usr/local/bin/menu.sh
 
-ENTRYPOINT ["/usr/local/bin/repeat.sh"]
+ENTRYPOINT ["/usr/local/bin/menu.sh"]
