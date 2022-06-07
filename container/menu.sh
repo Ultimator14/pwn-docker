@@ -25,23 +25,23 @@ echo -e " ${G}3.${E} Run forever"
 echo -e "${G}-------------------------------------${E}"
 
 while true; do
-	echo -ne "${G}[0/1/2/3]${E} "
-	read -r selector
-	case $selector in
-		[0]* )
-			exit;;
-		[1]* )
-			/bin/bash
-			break;;
-		[2]* )
-	        python /usr/local/bin/pwn-gdb $1
-			break;;
-		[3]* )
+    echo -ne "${G}[0/1/2/3]${E} "
+    read -r selector
+    case $selector in
+        [0]* )
+            exit;;
+        [1]* )
+            /bin/bash
+            break;;
+        [2]* )
+            python /usr/local/bin/pwn-gdb $1
+            break;;
+        [3]* )
             while true; do
-	            python /usr/local/bin/pwn-gdb $1
+                python /usr/local/bin/pwn-gdb $1
             done
-			break;;
-		* )
-			echo -ne "Answer not understood. ";;
-	esac
+            break;;
+        * )
+            echo -ne "Answer not understood. ";;
+    esac
 done
