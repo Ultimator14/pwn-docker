@@ -4,7 +4,7 @@ FROM archlinux:latest
 RUN pacman -Syyu --noconfirm
 
 # Install additional tools
-RUN pacman -S --noconfirm python python-pip
+RUN pacman -S --noconfirm python python-pip python-setuptools
 RUN pacman -S --noconfirm binutils gcc gdb lib32-glibc
 
 # Install non-apt packages gef and pwntools
