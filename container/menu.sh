@@ -10,6 +10,9 @@ command=$1
 if [[ "$#" -ne 1 ]]
 then
     warning=$(echo -e "No command specified!")
+elif [[ ! -x $1 ]]
+then
+    warning=$(echo -e " (Not executable!)")
 fi
 
 echo -e "${G}-------------------------------------${E}"
