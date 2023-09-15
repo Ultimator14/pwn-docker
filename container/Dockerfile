@@ -8,7 +8,7 @@ RUN pacman -S --noconfirm python python-pip python-setuptools
 RUN pacman -S --noconfirm binutils gcc gdb lib32-glibc
 
 # Install non-apt packages gef and pwntools
-RUN pip install --user pwntools
+RUN pip install --break-system-packages --user pwntools
 
 COPY pwn-gdb.py /usr/local/bin/pwn-gdb
 COPY menu.sh /usr/local/bin/menu.sh
