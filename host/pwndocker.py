@@ -34,7 +34,7 @@ class GDBConfig:
     @property
     def gdb_command(self):
         """Compute gdb config"""
-        script_lines = filter(bool, self.script.split("\n"))
+        script_lines = list(filter(bool, self.script.split("\n")))
         script_command_list = [x for pairs in zip(["-ex"] * len(script_lines), script_lines) for x in pairs]
 
         return (
@@ -100,7 +100,7 @@ class PwnGDBSession(PwnSession):
 
     def sh_init(self):
         sh = self.sh(self.tport)
-        run(self.gdb_config.get_gdb_command())
+        run(self.gdb_config.gdb_command)
 
         # initial gdb outputs
         _ = sh.recvline()  # gdbserver: Error disabling address space randomization: Operation not permitted
