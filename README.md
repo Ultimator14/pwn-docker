@@ -120,6 +120,8 @@ source /usr/share/gef/gef.py
 
 ## Tips
 
+- If the binary crashes right at the beginning without executing any code, this is an indication that the binary file is not executable. This is then also displayed in the option menu.
+- If the binary crashes (e.g. with SIGTRAP) without any obvious reason right at the beginning before the actual code starts, this is an indicator that a library is missing. Use the `Shell` option and check the binary with `ldd`.
 - Disable ASLR on the host system with `sysctl kernel.randomize_va_space=0` if required (docker doesn't have permission to change that per default)
 - For ease of use it's nice to have an alias for the container command
 
