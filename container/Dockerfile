@@ -11,11 +11,11 @@ RUN pacman -S --noconfirm \
 	bash zsh \
 	vim neovim nano \
 	coreutils base-devel tree-sitter-cli \
-	lib32-glibc \
+	lib32-glibc lib32-sqlite \
 	binutils gdb patchelf \
 	man-pages man-db \
 	python python-pip python-setuptools \
-	curl git gnu-netcat htop iproute2 inetutils iputils nano ncdu net-tools tar which \
+	curl git gnu-netcat htop iproute2 inetutils iputils nano ncdu net-tools sqlite3 tar which \
 	eza fd hexyl ripgrep tmux
 
 # Install non-apt packages gef and pwntools
