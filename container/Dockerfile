@@ -1,4 +1,4 @@
-FROM archlinux:latest
+FROM archlinux:multilib-devel
 
 # Update
 RUN pacman -Syyu --noconfirm
