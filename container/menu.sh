@@ -35,15 +35,15 @@ while true; do
             exit;;
         [1]* )
             /bin/bash
-            break;;
+            ;;
         [2]* )
             python /usr/local/bin/pwn-gdb $1
-            break;;
+            ;;
         [3]* )
             while true; do
                 python /usr/local/bin/pwn-gdb $1
             done
-            break;;
+            ;;
         * )
             echo -ne "Answer not understood. ";;
     esac
